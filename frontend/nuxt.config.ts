@@ -11,7 +11,15 @@ export default defineNuxtConfig({
       apiBase: '/api'
     }
   },
+  modules: ['@nuxtjs/apollo'],
   alias: {
     "@": "/",
-  }
+  },
+  apollo: {
+    clients: {
+      default: {
+        httpEndpoint: "http://localhost:4000/graphql"
+      }
+    },
+  },
 })

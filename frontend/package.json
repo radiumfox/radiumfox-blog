@@ -9,12 +9,16 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
+  "dependencies": {
+    "nuxt": "^3.7.4",
+    "typescript": "5.0.4",
+    "vue": "^3.3.4"
+  },
   "devDependencies": {
     "@nuxt/devtools": "latest",
+    "@nuxtjs/apollo": "^5.0.0-alpha.7",
     "@types/node": "^20.8.5",
-    "typescript": "5.0.4",
-    "nuxt": "^3.7.4",
-    "vue": "^3.3.4",
-    "vue-router": "^4.2.5"
+    "vue-router": "^4.2.5",
+    "graphql-tag": "2.12.6"
   }
 }
