@@ -5,5 +5,6 @@ export default defineAppConfig({
         colors: {
             primary: '#ff0000'
         }
-    }
+    },
+
 })

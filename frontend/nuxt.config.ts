@@ -6,20 +6,12 @@ export default defineNuxtConfig({
     devtools: { enabled: true },
   },
   runtimeConfig: {
-    apiSecret: '12345',
+    apiSecret: process.env.API_SECRET || '',
     public: {
-      apiBase: '/api'
-    }
+      baseURL: process.env.BASE_URL || ''
+    },
   },
-  modules: ['@nuxtjs/apollo'],
   alias: {
     "@": "/",
-  },
-  apollo: {
-    clients: {
-      default: {
-        httpEndpoint: "http://localhost:4000/graphql"
-      }
-    },
   },
 })
