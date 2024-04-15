@@ -1,50 +1,50 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import { usePostsStore } from '@/store/posts/posts.store'
+import { ref } from "vue";
+import { usePostsStore } from "@/store/posts/posts.store";
 
-const store = usePostsStore()
+const store = usePostsStore();
 
-const title = ref('')
-const content = ref('')
-const tags = ref('')
+const title = ref("");
+const content = ref("");
+const tags = ref("");
 
 const createPost = () => {
-  const date = new Date().toISOString()
-  const tagsList = tags.value.split(',').map((v) => v.trim()) || ['']
+  const date = new Date().toISOString();
+  const tagsList = tags.value.split(",").map((v) => v.trim()) || [""];
   const data = {
     date: date,
     title: title.value,
     content: content.value,
     tags: tagsList,
-    images: [''],
-  }
+    images: [""],
+  };
 
   store.createPost(data).then((res) => {
-    if (res) clearInputs()
-  })
-}
+    if (res) clearInputs();
+  });
+};
 const clearInputs = () => {
-  content.value = ''
-  title.value = ''
-  tags.value = ''
-}
+  content.value = "";
+  title.value = "";
+  tags.value = "";
+};
 </script>
 <template>
-  <div class="create-form" >
+  <div class="create-form">
     <h3 class="create-form__title">Create post</h3>
-    <div class="create-form__input" >
+    <div class="create-form__input">
       <label for="title">Title</label>
-      <input name="title" v-model="title" type="text" />
+      <input v-model="title" name="title" type="text" />
     </div>
-    <div class="create-form__input" >
+    <div class="create-form__input">
       <label for="content">Content</label>
-      <textarea name="content" v-model="content"></textarea>
+      <textarea v-model="content" name="content"></textarea>
     </div>
     <div class="create-form__input">
       <label for="tags">Tags</label>
       <input
-        name="tags"
         v-model="tags"
+        name="tags"
         type="text"
         placeholder="list separated by commas"
       />

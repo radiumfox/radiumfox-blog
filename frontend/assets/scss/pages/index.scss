@@ -1,0 +1,13 @@
+.main-page {
+  &__section {
+    margin-bottom: 120px;
+  }
+  
+  &__title {
+    margin-bottom: 20px;
+    font-size: 26px;
+    line-height: 30px;
+    font-weight: 400;
+    color: $neutral-50;
+  }
+}

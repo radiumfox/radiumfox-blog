@@ -1,17 +1,17 @@
 <script lang="ts" setup>
-import type { PropType } from 'vue'
+import type { PropType } from "vue";
 const props = defineProps({
   icon: {
     type: String,
-    default: '',
+    default: "",
   },
   text: {
     type: String,
-    default: '',
+    default: "",
   },
-})
+});
 
-const emits = defineEmits(['click'])
+const emits = defineEmits(["click"]);
 </script>
 <template>
   <button class="button-base" @click="emits('click')">
