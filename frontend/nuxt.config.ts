@@ -8,10 +8,11 @@ export default defineNuxtConfig({
   runtimeConfig: {
     apiSecret: process.env.API_SECRET || '',
     public: {
-      baseURL: process.env.BASE_URL || ''
+      baseURL: process.env.BASE_URL || '',
     },
   },
   alias: {
     "@": "/",
   },
+
 })

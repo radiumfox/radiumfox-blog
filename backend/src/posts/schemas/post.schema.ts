@@ -19,6 +19,7 @@ export class Post {
 
     @Prop([String]) // complex types
     images: string[];
+
 }
 
 export const PostSchema = SchemaFactory.createForClass(Post);
