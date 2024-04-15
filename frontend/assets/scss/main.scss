@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+}
+
+.create-form {
+  width: 500px;
+
+  &__input {
+    display: flex;
+    flex-direction: column;
+
+    &:last-of-type {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.edit-form {
+  &__item {
+    display: flex;
+    flex-direction: column;
+
+    &:last-of-type {
+      margin-bottom: 20px;
+    }
+  }
+}
