@@ -1,17 +1,8 @@
 <script setup lang="ts">
-import type { PropType } from 'vue'
-
-const MODES = {
-  FEATURE: 'feature',
-  NORMAL: 'normal',
-}
-
-type Modes = MODES.NORMAL | MODES.FEATURE
-
 const props = defineProps({
-  mode: {
-    type: String as PropType<Modes>,
-    default: 'normal',
+  isFeatured: {
+    type: Boolean,
+    default: false,
   },
   badgeText: {
     type: String,
@@ -40,12 +31,12 @@ const props = defineProps({
     <v-card variant="outlined" :href="props.href">
       <div class="post-preview__wrapper">
         <div class="post-preview__text">
-          <v-card-title>
+          <v-card-title v-if="props.badgeText">
             <div
               :class="[
                 'post-preview__badge',
                 {
-                  'post-preview__badge--feature': props.mode === MODES.FEATURE,
+                  'post-preview__badge--feature': props.isFeatured,
                 },
               ]"
             >
@@ -55,15 +46,11 @@ const props = defineProps({
           <v-card-title>
             {{ props.text }}
           </v-card-title>
-          <v-card-subtitle>
+          <v-card-subtitle v-if="props.date">
             {{ props.date }}
           </v-card-subtitle>
         </div>
-        <v-img
-          height="200px"
-          src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-          cover
-        ></v-img>
+        <v-img height="200px" :src="props.image" cover></v-img>
       </div>
     </v-card>
   </div>

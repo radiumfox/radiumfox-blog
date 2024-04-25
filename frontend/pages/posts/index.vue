@@ -1,52 +1,52 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import { usePostsStore } from "@/store/posts/posts.store";
+import { ref } from 'vue'
+import { usePostsStore } from '@/store/posts/posts.store'
 
-const store = usePostsStore();
-const title = ref("");
-const content = ref("");
-const tags = ref("");
-const editedPost = ref(-1);
-const posts = store.posts;
+const store = usePostsStore()
+const title = ref('')
+const content = ref('')
+const tags = ref('')
+const editedPost = ref(-1)
+const posts = store.posts
 
-store.getPosts();
+store.getPosts()
 
 const updatePost = (id, index) => {
-  const tagsList = tags.value.split(",").map((v) => v.trim()) || [""];
+  const tagsList = tags.value.split(',').map((v) => v.trim()) || ['']
   const data = {
     id: id,
     title: title.value,
     content: content.value,
     tags: tagsList,
-    images: [""],
-  };
+    images: [''],
+  }
 
-  store.updatePost(id, data, index);
-};
+  store.updatePost(id, data, index)
+}
 
 const deletePost = (id: string, index: number) => {
-  store.deletePost(id, index);
-};
+  store.deletePost(id, index)
+}
 
 const editPost = (index) => {
-  clearInputs();
+  clearInputs()
 
-  const post = posts[index];
-  content.value = post.content;
-  title.value = post.title;
-  tags.value = post.tags.join(",");
-  editedPost.value = index;
-};
+  const post = posts[index]
+  content.value = post.content
+  title.value = post.title
+  tags.value = post.tags.join(',')
+  editedPost.value = index
+}
 
 const closeForm = () => {
-  editedPost.value = -1;
-};
+  editedPost.value = -1
+}
 
 const clearInputs = () => {
-  content.value = "";
-  title.value = "";
-  tags.value = "";
-};
+  content.value = ''
+  title.value = ''
+  tags.value = ''
+}
 </script>
 <template>
   <div>
@@ -57,7 +57,7 @@ const clearInputs = () => {
         <em class="post__date">Date: {{ post.date }}</em>
         <div>
           <template v-for="(tag, index) in post.tags">
-            <em>{{ tag }}{{ index < post.tags.length - 1 ? ", " : "" }}</em>
+            <em>{{ tag }}{{ index < post.tags.length - 1 ? ', ' : '' }}</em>
           </template>
         </div>
 

@@ -30,7 +30,6 @@ export class PostsService {
     }
 
     async updateOne(id: string, updatePostDto: UpdatePostDto) {
-
         const updatedPost = await this.postModel
             .findByIdAndUpdate({_id: id}, updatePostDto).exec()
 

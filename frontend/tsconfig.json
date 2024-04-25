@@ -3,7 +3,7 @@
   "extends": "./.nuxt/tsconfig.json",
   "root": true,
   "compilerOptions": {
-    "verbatimModuleSyntax": true,
-    "module": "CommonJS"
+    "verbatimModuleSyntax": false,
+    // "module": "CommonJS"
   }
 }
