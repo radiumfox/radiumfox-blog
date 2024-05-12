@@ -1,53 +1,19 @@
 <script setup lang="ts">
+import { PAGES } from '@/classes/constants/pages'
 const route = useRoute()
-
-const ROUTES = {
-  INDEX: 'index',
-  POSTS: 'posts',
-  ABOUT: 'about',
-  CONTACT: 'contact',
-} as const
-
-const tabs = {
-  [ROUTES.INDEX]: {
-    id: 1,
-    name: ROUTES.INDEX,
-    title: 'Home',
-    href: '/',
-  },
-  [ROUTES.POSTS]: {
-    id: 2,
-    name: ROUTES.POSTS,
-    title: 'Posts',
-    href: '/posts',
-  },
-  [ROUTES.ABOUT]: {
-    id: 3,
-    name: ROUTES.ABOUT,
-    title: 'About',
-    href: '/about',
-  },
-  [ROUTES.CONTACT]: {
-    id: 4,
-    name: ROUTES.CONTACT,
-    title: 'Contact',
-    href: '/contact',
-  },
-}
-
-const activeTab = ref(tabs[route.name])
+const activeTab = ref(PAGES[route.name])
 </script>
 <template>
-  <div class="header">
+  <header class="header">
     <div class="header__wrapper">
       <div class="header__logo">
-        <HeaderLogo />
+        <IconLogo />
       </div>
       <div class="header__right">
         <div class="header__tabs">
           <v-tabs v-model="activeTab" direction="horizontal">
             <span
-              v-for="(tab, index) in tabs"
+              v-for="(tab, index) in PAGES"
               :key="index"
               class="header__link"
             >
@@ -61,7 +27,7 @@ const activeTab = ref(tabs[route.name])
             :loading="false"
             prepend-inner-icon="mdi-magnify"
             :density="'comfortable'"
-            label="Search post"
+            label="Search"
             variant="solo"
             hide-details
             single-line
@@ -74,5 +40,5 @@ const activeTab = ref(tabs[route.name])
         </div>
       </div>
     </div>
-  </div>
+  </header>
 </template>

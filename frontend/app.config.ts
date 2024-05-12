@@ -1,9 +1,9 @@
 export default defineAppConfig({
-  title: "Nuxt Blog",
+  title: 'Nuxt Blog',
   theme: {
     dark: true,
     colors: {
-      primary: "#ffffff",
+      primary: '#ffffff',
     },
   },
-});
+})

@@ -1,5 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import vuetify, { transformAssetUrls } from "vite-plugin-vuetify";
+import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 
 export default defineNuxtConfig({
   $production: {},
@@ -7,27 +7,27 @@ export default defineNuxtConfig({
     devtools: { enabled: true },
   },
   runtimeConfig: {
-    apiSecret: process.env.API_SECRET || "",
+    apiSecret: process.env.API_SECRET || '',
     public: {
-      baseURL: process.env.BASE_URL || "",
+      baseURL: process.env.BASE_URL || '',
     },
   },
   build: {
-    transpile: ["vuetify"],
+    transpile: ['vuetify'],
   },
   alias: {
-    assets: "/<rootDir>/assets",
+    assets: '/<rootDir>/assets',
   },
-  css: ["~/assets/scss/main.scss"],
+  css: ['~/assets/scss/main.scss'],
   modules: [
     // '@nuxtjs/eslint-module',
-    "@vueuse/nuxt",
-    "@pinia/nuxt",
+    '@vueuse/nuxt',
+    '@pinia/nuxt',
     (_options, nuxt) => {
-      nuxt.hooks.hook("vite:extendConfig", (config) => {
+      nuxt.hooks.hook('vite:extendConfig', (config) => {
         // @ts-expect-error
-        config.plugins.push(vuetify({ autoImport: true }));
-      });
+        config.plugins.push(vuetify({ autoImport: true }))
+      })
     },
   ],
   vite: {
@@ -37,4 +37,4 @@ export default defineNuxtConfig({
       },
     },
   },
-});
+})
