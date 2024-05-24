@@ -1,46 +1,41 @@
-enum Methods {
-  Get = 'GET',
-  Post = 'POST',
-  Put = 'PUT',
-  Delete = 'DELETE',
-}
+import { METHODS } from "@/classes/constants";
 
 export const useFetching = () => {
-  const config = useRuntimeConfig()
+  const config = useRuntimeConfig();
   const getData = (request: string) => {
     return useFetch(`${config.public.baseURL}${request}`, {
       baseURL: config.public.baseURL,
-      method: Methods.Get,
-    })
-  }
+      method: METHODS.GET,
+    });
+  };
 
   const postData = (request: string, data: any) => {
     return useFetch(`${config.public.baseURL}${request}`, {
       baseURL: config.public.baseURL,
-      method: Methods.Post,
+      method: METHODS.POST,
       body: data,
-    })
-  }
+    });
+  };
 
   const updateData = (request: string, data: any) => {
     return useFetch(`${config.public.baseURL}${request}`, {
       baseURL: config.public.baseURL,
-      method: Methods.Put,
+      method: METHODS.PUT,
       body: data,
-    })
-  }
+    });
+  };
 
   const deleteData = (request: string) => {
     return useFetch(`${config.public.baseURL}${request}`, {
       baseURL: config.public.baseURL,
-      method: Methods.Delete,
-    })
-  }
+      method: METHODS.DELETE,
+    });
+  };
 
   return {
     getData,
     postData,
     updateData,
     deleteData,
-  }
-}
+  };
+};

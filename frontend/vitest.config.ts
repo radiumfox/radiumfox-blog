@@ -1,12 +1,11 @@
-import { defineConfig } from 'vitest/config'
-import vue from '@vitejs/plugin-vue'
+import { defineConfig } from "vitest/config";
+import vue from "@vitejs/plugin-vue";
 
 export default defineConfig({
   plugins: [vue()],
   test: {
     globals: true,
-    exclude: ['node_modules', '.nuxt', '.output'],
-    // include: ["components", "composables", "layouts", "middleware", "pages", "store"]
+    exclude: ["node_modules", ".nuxt", ".output"],
   },
-  environment: 'happy-dom',
-})
+  environment: "happy-dom",
+});

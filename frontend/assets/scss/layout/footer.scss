@@ -1,0 +1,35 @@
+.footer {
+  width: 100%;
+  padding-bottom: 80px;
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__copyright {
+    color: $neutral-80;
+  }
+
+  &__right {
+    display: flex;
+    column-gap: 75px;
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+  }
+
+  &__subtitle {
+    color: $neutral-60;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+
+  &__link {
+    color: $neutral-0;
+    text-decoration: none;
+  }
+}

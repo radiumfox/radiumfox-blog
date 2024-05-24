@@ -20,7 +20,7 @@ export default defineNuxtConfig({
   },
   css: ['~/assets/scss/main.scss'],
   modules: [
-    '@nuxtjs/eslint-module',
+    // '@nuxtjs/eslint-module',
     '@vueuse/nuxt',
     '@pinia/nuxt',
     (_options, nuxt) => {

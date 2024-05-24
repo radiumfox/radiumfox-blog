@@ -3,4 +3,6 @@ export class UpdatePostDto {
     readonly content?: string;
     readonly tags?: string[];
     readonly images?: string[];
+    readonly mainImage?: string;
+    readonly isFeatured?: boolean;
 }

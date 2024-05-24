@@ -1,0 +1,31 @@
+.post-preview {
+  &__wrapper {
+    display: flex;
+  }
+
+  &__text {
+    min-width: 250px;
+    width: 250px;
+  }
+
+  &__image {
+    width: 100%;
+    
+  }
+
+  &__badge {
+    padding: 4px 8px;
+    text-transform: uppercase;
+    background: $neutral-80;
+    color: $neutral-20;
+    width: fit-content;
+    border-radius: 4px;
+    line-height: 18px;
+    font-size: 12px;
+
+    &--feature {
+      background: $success-50;
+      color: $success-80;
+    }
+  }
+}

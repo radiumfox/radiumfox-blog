@@ -14,12 +14,17 @@ export class Post {
     @Prop()
     content: string;
 
-    @Prop([String]) // complex types
+    @Prop([String])
     tags: string[];
 
-    @Prop([String]) // complex types
+    @Prop([String])
     images: string[];
 
+    @Prop()
+    mainImage: string;
+
+    @Prop()
+    isFeatured: boolean;
 }
 
 export const PostSchema = SchemaFactory.createForClass(Post);

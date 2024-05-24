@@ -1,0 +1,12 @@
+.layout-wrapper {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 26px 0;
+
+  &__header-placeholder {
+    height: 75px;
+    margin-bottom: 26px;
+  }
+}
